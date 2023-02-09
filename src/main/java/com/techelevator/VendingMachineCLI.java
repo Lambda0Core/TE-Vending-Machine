@@ -2,6 +2,16 @@ package com.techelevator;
 
 import com.techelevator.view.VendingMenu;
 
+/**
+ * What we have left to do:
+ *
+ * A). We need to connect all of our classes to our executable.
+ * B). Create backend executable.
+ * C). List vendingmachine.csv in menu
+ * D). Be able to select based on entry's first index
+ * E). Accept money, return change and item.
+ * F).
+ */
 
 
 public class VendingMachineCLI {
@@ -42,5 +52,6 @@ public class VendingMachineCLI {
 		VendingMenu menu = new VendingMenu(System.in, System.out);
 		VendingMachineCLI cli = new VendingMachineCLI(menu);
 		cli.run();
+
 	}
 }
