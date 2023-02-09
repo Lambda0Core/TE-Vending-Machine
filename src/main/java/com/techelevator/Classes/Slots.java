@@ -1,5 +1,6 @@
 package com.techelevator.Classes;
 
+import java.awt.*;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -15,8 +16,10 @@ public class Slots {
     private int i;
     private String slotID;
     private String category;
+    private String slotItemName;
 
-    public Slots(String slotID, int quantity, String category) {
+    public Slots(String slotItemName, String slotID, int quantity, String category) {
+        this.slotItemName = slotItemName;
         this.slotID = slotID;
         this.quantity = quantity;
     }
@@ -30,11 +33,11 @@ public class Slots {
 
     //replace the value with out of stock; temp
     public String dispenseItem() {
-        slot.replace(slotID, "out of stock");
+
         return category;
     }
 //method loads items from text
-    public String loadItems() {
+    public void loadItems() {
         String test = "";
         String inputFile = "C:\\Users\\Student\\workspace\\nlr-12-module-1-capstone-team-6\\vendingmachine.csv";
         File fileFile = new File(inputFile);
@@ -48,7 +51,9 @@ public class Slots {
         //0 thru 3 is the first entry in the text file. 4 thru 8 is the second entry, each entry is equal to the last + 4.
         //0 = slot number, 1 = item name, 2 = item price, 3 = category.
         //use setter for int i to go through desired index depending on user selection.
-        return pleaseGodDont[i];
+        slotItemName = pleaseGodDont[i];
+//
+//        pleaseGodDont[i];
     }
 
     //potential method for populating map with textfile

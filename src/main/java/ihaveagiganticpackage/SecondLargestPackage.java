@@ -17,7 +17,6 @@ public class SecondLargestPackage {
         File fileFile = new File(inputFile);
         Scanner vendcsv = new Scanner(fileFile);
 //            String lineFromFile = vendcsv.findInLine();
-        Slots()
         try {
             test = new String(String.valueOf(Files.readAllLines(Path.of(inputFile))));
         } catch (IOException e) {
