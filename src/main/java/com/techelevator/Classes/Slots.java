@@ -12,17 +12,21 @@ public class Slots {
     private List<String> itemName = new ArrayList<>();
     private List<Double> itemPrice = new ArrayList<>();
     private List<String> category = new ArrayList<>();
-    private int quantity;
+    public int quantity;
     private int count;
 
     //constructor
-    public Slots(int count, int quantity) {
+    public Slots(int count) {
         this.count = count;
-        this.quantity = quantity;
+        this.quantity = 5;
+        if(quantity <= 0 ){
+            itemName.set(count, "sold out");
+        }
     }
 
     public Slots(double itemPrice) {
     }
+
 
     //getters
     public String getIdNum(int count) {
@@ -55,6 +59,9 @@ public class Slots {
     public void setQuantity(int quantity) {
         this.quantity = quantity;
     }
+    public void setItemName(List<String> itemName) {
+        this.itemName = itemName;
+    }
 
 
     //Methods
@@ -73,7 +80,9 @@ public class Slots {
                 itemPrice.add(Double.parseDouble(value_split[2]));
                 category.add(value_split[3]);
             }
-
+            if(quantity <= 0 ){
+                itemName.set(count, "sold out");
+            }
         } catch (FileNotFoundException e) {
             e.printStackTrace();
 
