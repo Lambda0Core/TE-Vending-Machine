@@ -1,11 +1,6 @@
 package ihaveagiganticpackage;
 
-import com.techelevator.Classes.Items;
-import com.techelevator.Classes.Slots;
-import com.techelevator.Classes.Slots_rebuilt;
-
 import java.io.File;
-import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
@@ -24,14 +19,14 @@ public class testClass {
         int i = 0;
         //int i = index counter for item list
         //0 = slot number, 1 = item name, 2 = item price, 3 = category. 4 = quantity
-        Slots_rebuilt slot1 = new Slots_rebuilt("A1", slotItemName, itemPrice, category, quantity);
-        Slots_rebuilt slot2 = new Slots_rebuilt("A2", slotItemName, itemPrice, category, quantity);
-        System.out.println(slot1.getSlotID());
-        slot1.loadItems();
-        i++;
-        System.out.println(slot1.getSlotID() + " " + slot1.getSlotItemName() + " " + slot1.getItemPrice() + " " +  slot1.getCategory() + " " +  slot1.getQuantity());
-        slot2.loadItems();
-        System.out.println(slot2.getSlotID() + " " + slot2.getSlotItemName() + " " + slot2.getItemPrice() + " " +  slot2.getCategory() + " " +  slot2.getQuantity());
+//        Slots_rebuilt slot1 = new Slots_rebuilt("A1", slotItemName, itemPrice, category, quantity);
+//        Slots_rebuilt slot2 = new Slots_rebuilt("A2", slotItemName, itemPrice, category, quantity);
+//        System.out.println(slot1.getSlotID());
+//        slot1.loadItems();
+//        i++;
+//        System.out.println(slot1.getSlotID() + " " + slot1.getSlotItemName() + " " + slot1.getItemPrice() + " " +  slot1.getCategory() + " " +  slot1.getQuantity());
+//        slot2.loadItems();
+//        System.out.println(slot2.getSlotID() + " " + slot2.getSlotItemName() + " " + slot2.getItemPrice() + " " +  slot2.getCategory() + " " +  slot2.getQuantity());
 
         //testing grounds
         String test = "";

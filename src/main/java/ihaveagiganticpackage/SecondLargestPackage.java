@@ -28,13 +28,26 @@ public class SecondLargestPackage {
         int num = 3;
         //0 thru 3 is the first entry in the text file. 4 thru 8 is the second entry, each entry is equal to the last + 4.
         //0 = slot number, 1 = item name, 2 = item price, 3 = category.
-        System.out.println(pleaseGodDont[8]);
-////            String[] words = lineFromFile.split("\\|");
-//            System.out.println(words[]);
-        Map<String, String> slotItem = new HashMap<>();
-        slotItem.put(pleaseGodDont[0], pleaseGodDont[1]);
-        Map<String, String> slotTest = new HashMap<>();
-        slotTest.put("A1", pleaseGodDont[1]);
-        System.out.println(slotTest);
+        Map<String, String>itemFood = new HashMap<>();
+        try(Scanner fileScanner = new Scanner(inputFile)){
+
+            while(fileScanner.hasNextLine()) {
+                String line = fileScanner.nextLine();
+                String[] value_split = line.split("\\|");
+                if(value_split[3].equals("Chip")) {
+//                    Product product = new Chip(value_split[1], Double.parseDouble(value_split[2]));
+//                    inventoryMap.put(value_split[0], product);
+                    System.out.println(value_split[2]);
+
+            }
         }
+
+        System.out.println(pleaseGodDont[8]);
+////
+
+
+        }
+
     }
+}
+

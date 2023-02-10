@@ -6,8 +6,9 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.*;
 
-public class Items extends Slots {
+public class Items {
 
+    private String slotID;
     private String category;
     private double itemPrice;
     private String itemName;
@@ -16,7 +17,7 @@ public class Items extends Slots {
 
 
     public Items(String slotID, String itemName, String category, double itemPrice) {
-        super(slotID);
+        this.slotID = slotID;
         this.itemPrice = itemPrice;
         this.category = category;
         this.itemName = itemName;
@@ -25,6 +26,14 @@ public class Items extends Slots {
     public Items(double itemPrice) {
 
     }
+
+    public Items() {
+        this.slotID = "NULL";
+        this.itemPrice = 0.0;
+        this.category = "Dummy";
+        this.itemName = "Out of stock";
+    }
+
     private static String categories(List<String> itemLine) {
         Map<String, String> categoryMap = new HashMap<>();
         categoryMap.put("Beverages", "Glug Glug, I am no longer sober I can forget my fears!");
@@ -38,6 +47,12 @@ public class Items extends Slots {
         }
         return " " + categoryMap.get((testCat));
     }
+
+    public String printItem() {
+        return slotID + "|" + itemName +"|" +itemPrice + "|" + category;
+    }
+
+
 //    public void loadItems() {
 //        String test = "";
 //        String inputFile = "C:\\Users\\Student\\workspace\\nlr-12-module-1-capstone-team-6\\vendingmachine.csv";
