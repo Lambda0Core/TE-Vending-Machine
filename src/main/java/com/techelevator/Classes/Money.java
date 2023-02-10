@@ -1,28 +1,44 @@
 package com.techelevator.Classes;
 
-public class Money extends Items {
+public class Money extends Slots {
 
     private double inputMoney;
     private double outputMoney;
     private double totalSales;
 
 
-    public Money(double inputMoney, double outputMoney, double totalSales, double itemPrice) {
-        super(itemPrice);
-        this.inputMoney = inputMoney;
-        this.outputMoney = outputMoney;
-        this.totalSales = totalSales;
+    public double getInputMoney() {
+        return inputMoney;
     }
 
-    private static String moneySale(double itemPrice, double inputMoney, double outputMoney){
-        if (inputMoney == itemPrice || inputMoney >= itemPrice){
-            inputMoney -= itemPrice;
+    public double getOutputMoney() {
+        return outputMoney;
+    }
+
+    public double getTotalSales() {
+        return totalSales;
+    }
+
+    public void setInputMoney(double inputMoney) {
+        this.inputMoney = inputMoney;
+    }
+
+    public Money(double inputMoney, double itemPrice) {
+        super(itemPrice);
+        this.inputMoney = inputMoney;
+    }
+
+    public double moneySale(double inputMoney, double itemPrice){
+        if(inputMoney >= itemPrice){
+            inputMoney-=itemPrice;
             outputMoney = inputMoney;
-        }else if (inputMoney <= itemPrice){
-            return "Sorry but you do not have enough money for this item.";
+            inputMoney =0.0;
+            setQuantity(getQuantity(getCount())-1);
+            return outputMoney;
+        }else{
+            return inputMoney;
         }
 
-        return "Thank you for your purchase! Your total change is:  " + outputMoney;
     }
 
 
